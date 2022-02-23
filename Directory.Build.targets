@@ -1,0 +1,11 @@
+<Project>
+  <Target Name="Build" />
+  <Target Name="Clean" />
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+
+  <Target Name="CompileTypeScript" BeforeTargets="Build">
+    <MakeDir Directories="$(MSBuildProjectDirectory)\_jsCompiled"/>
+    <Message Importance="High" Text="TypescriptCompile = @(TypescriptCompile)" />
+    <Touch Files="$(MSBuildProjectDirectory)\_jsCompiled\Approvals.js" AlwaysCreate="true" />
+  </Target>
+</Project>

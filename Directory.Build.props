@@ -1,5 +1,12 @@
 ﻿<Project>
   <PropertyGroup>
-    <WorkspaceRoot>$(MSBuildThisFileDirectory)</WorkspaceRoot>
-  </PropertyGroup>  
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\**\*.ts" />
+    <Stylus Include="Stylus\**\*.styl" />
+    <Content Include="Content\**\*.*" />
+    <Content Include="StaticViews\**\*.*" />
+  </ItemGroup>
 </Project>
