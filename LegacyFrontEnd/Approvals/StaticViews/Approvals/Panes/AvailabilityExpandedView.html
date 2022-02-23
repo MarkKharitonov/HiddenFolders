@@ -1,0 +1,28 @@
+﻿<div class="availabilityExpandedViewBody expandedViewBody">
+    <div class="header">
+        <span data-dojo-type="Framework/UI/mvc/Output" class="dijitInline" data-dojo-props="value:at (this.model, 'lblAvailabilityRequested').direction(at.from)"></span>
+    </div>
+
+    <div>
+        <span data-dojo-type="Framework/UI/mvc/Output" class="dijitInline requestedDates" data-dojo-props="value:at (this.model, 'requestedDatesText').direction(at.from)"></span>
+    </div>
+
+    <!-- placeholder for adding weekly availabilities widget -->
+    <div data-dojo-attach-point="availabilityWeeklyRequestContainer" class="availabilityWeeklyRequestContainer">
+
+    </div>
+
+    <div class="employeeCommentsSection">
+        <div data-dojo-type="Framework/UI/mvc/Output" class="requestedDatesLabel" data-dojo-props="value:localize('lblEmployeeComments')"></div>
+        <div data-dojo-type="Framework/UI/mvc/Output" data-dojo-attach-point="noComments" data-dojo-props="value:localize('lblNoCommentEntered')"></div>
+        <div data-dojo-type="Framework/UI/mvc/Output" class="employeeCommentsText" data-dojo-attach-point="employeeComments" data-dojo-props="value:at(this.model, 'employeeComments')"></div>
+    </div>
+
+    <div class="managerCommentsSection">
+        <div data-dojo-type="Framework/UI/mvc/Output" class="managerComments" data-dojo-props="value:localize('lblManagerComment')"></div>
+        <div data-dojo-type="Framework/UI/Form/SimpleTextarea" data-dojo-attach-point="managerComments" class="managerCommentsTextArea"
+             data-dojo-props="disabled:at(this.model, 'isDisableEdit'), value:at(this.model, 'managerComments')" maxlength="127"></div>
+    </div>
+    <div class="dijitInline actionButtons" data-dojo-attach-point="actionButtons">
+    </div>
+</div>

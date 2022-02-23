@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <StylusOutputFolder>Content\$(MSBuildProjectName)\styles</StylusOutputFolder>
+    <StylusPath>$(WorkspaceRoot)Tools\Stylus\bin\stylus</StylusPath>
+    <PostStylusPath>$(WorkspaceRoot)Tools\StylusExtensions\PostStylus\node_modules\poststylus</PostStylusPath>
+    <LostGridPath>$(WorkspaceRoot)Tools\StylusExtensions\Lost\node_modules\lost\lost.js</LostGridPath>
+    <LostGridPathEscaped>$(LostGridPath.Replace('\','/'))</LostGridPathEscaped>
+    <NibPath>$(WorkspaceRoot)Tools\StylusExtensions\Nib\node_modules\nib</NibPath>
+    <StylusCommand>$(Node) $(StylusPath) -u $(NibPath) -u $(PostStylusPath) --with &quot;[require('$(LostGridPathEscaped)')()]&quot;</StylusCommand>
+  </PropertyGroup>
+
+  <Target Name="CompileStylus" BeforeTargets="Build" Inputs="@(Stylus)" Outputs="$(StylusOutputFolder)\$(ProjectName).css">
+    <MakeDir Directories="$(StylusOutputFolder)" />
+    <Exec Command="$(StylusCommand) -o $(StylusOutputFolder) Stylus\$(ProjectName).styl" />
+  </Target>
+</Project>

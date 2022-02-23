@@ -1,0 +1,94 @@
+﻿<div class="filterApprovalTypeWidget" data-dojo-attach-point="containerNode">
+    
+    <div data-dojo-type="dayforce/ButtonGroup" data-dojo-props="isRadio:false">
+        <!--Availability -->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="availability"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCAvailabilityChangeRequestIcon',
+                                filterOn: 'checked',
+                                label: localize('lblAvailability'),
+                                tooltipLabel: localize('lblAvailability'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+        <!--Overtime Banking-->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="overtimeBanking"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCOTBankingIcon',
+                                filterOn: 'checked',
+                                label: localize('lblOvertimeBanking'),
+                                tooltipLabel: localize('lblOvertimeBanking'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+        <!--Shift Trade-->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="shiftTrade"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCShiftTradeIcon',
+                                filterOn: 'checked',
+                                label: localize('lblShiftTrade'),
+                                tooltipLabel: localize('lblShiftTrade'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+        <!--TAFW-->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="tafw"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCTAFWIcon',
+                                filterOn: 'checked',
+                                label: localize('lblTAFW'),
+                                tooltipLabel: localize('lblTAFW'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+        <!--Unfilled Shift Bid-->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="unfilledShiftBid"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCUnfilledShiftBidIcon',
+                                filterOn: 'checked',
+                                label: localize('lblUnfilledShiftBid'),
+                                tooltipLabel: localize('lblUnfilledShiftBid'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+        <!--Unfilled Shift Trade-->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="unfilledShiftTrade"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCUnfilledShiftTradeIcon',
+                                filterOn: 'checked',
+                                label: localize('lblUnfilledShiftTrade'),
+                                tooltipLabel: localize('lblUnfilledShiftTrade'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+        <!--Vacation Bidding-->
+        <span data-dojo-type="dayforce/form/ToggleButton"
+              class="toggleButton"
+              style="display:none"
+              data-dojo-attach-point="vacationBidding"
+              data-dojo-mixins="Framework/UI/Mixins/_TooltipMixin"
+              data-dojo-props="iconClass:'MCVacationBiddingIcon',
+                                filterOn: 'checked',
+                                label: localize('lblVacationBiddingApprovals'),
+                                tooltipLabel: localize('lblVacationBiddingApprovals'),
+                                tooltipPosition: ['above', 'below', 'after', 'before']">
+        </span>
+    </div>
+    <script type="dojo/require">
+        at:'dojox/mvc/at',
+        localize: 'Framework/Modules/Localize/getLabel'
+    </script>
+
+</div>

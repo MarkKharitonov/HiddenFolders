@@ -1,0 +1,6 @@
+﻿{
+    "name": "Approvals",
+    "description": "Built Dayforce Module",
+    "version": "1.0",    
+    "dojoBuild": "package.profile.js"
+}

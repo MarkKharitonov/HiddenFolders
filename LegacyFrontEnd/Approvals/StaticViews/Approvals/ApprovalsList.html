@@ -1,0 +1,28 @@
+﻿<div class="approvalsList" data-dojo-attach-point="scrollNode">
+    
+    <!--FilterPane -->
+    <div data-dojo-type="Approvals/Modules/Controls/FilterPane" 
+        data-dojo-attach-point="filterPane"
+        data-dojo-props="categorizedFilters:at(this,'categorizedFilters'),grouping:'AND', animate:true, showGroupingSelector:false, showClearFilter: false, height: 500, editMode: true, sortFilters:false, showOverrideMaxEmployeesFilter: at(this,'showOverrideMaxEmployeesFilter').direction(at.from)"
+        data-dojo-attach-event="onApplyFilter: _applyFilter">
+    </div>
+
+    <!-- Main Content aka header + ApprovalListRow (added programmatically) -->
+    <div class="approvalsListContent" data-dojo-attach-point="contentNode">
+        <div data-dojo-type="Framework/UI/mvc/Output" class="messageListHeader" data-dojo-props="value:localize('lblApprovals')"></div>
+		<div data-dojo-type="Framework/UI/mvc/Output" data-dojo-attach-point="employeeLimitExceededMessage" data-dojo-props="visible: false"></div>
+        <div data-dojo-attach-point="containerNode"></div>		
+		<div id="grid"
+			 class="approvalsGrid"
+			 data-dojo-type="Framework/UI/Datagrid"
+			 data-dojo-attach-point="grid"
+			 data-dojo-attach-event="dgrid-refresh-complete: _onReloadComplete"
+			 data-dojo-props="maxRowsPerPage: 25, renderRow: this._renderItem, showHeader: false,prependNewRows:true, appendNewRows: true, selectionMode:'none', pagingDelay: 50">
+		</div>	
+    </div>
+
+    <script type="dojo/require">
+        at:'dojox/mvc/at',
+        localize:'Framework/Modules/Localize/getLabel'
+    </script>
+</div>

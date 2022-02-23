@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <UpstreamDirectoryBuildTargets>$([MSBuild]::GetPathOfFileAbove('Directory.Build.Targets', '$(MSBuildThisFileDirectory)\..\'))</UpstreamDirectoryBuildTargets>
+  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)_Build\*.targets" />
+  <Import Project="$(UpstreamDirectoryBuildTargets)" Condition="$(UpstreamDirectoryBuildTargets) != ''" />
+</Project>

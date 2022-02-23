@@ -1,0 +1,4 @@
+*.binlog
+_jsCompiled
+obj
+.vs*

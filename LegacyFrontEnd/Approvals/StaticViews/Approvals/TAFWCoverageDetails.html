@@ -1,0 +1,56 @@
+﻿<div class="tafwCoverageDetails">
+    <div class="tafwCoverageHeader" data-dojo-attach-point="tafwCoverageHeader" data-dojo-attach-event="onClick: toggle">
+
+        <!-- we are using a table here to make the CSS consistent with Balance Pane -->
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="ExpanderTitleInner" data-dojo-attach-point="focusNode" role="button">
+                            <div data-expander-title-node="true" class="ExpanderTitleNode">
+                                <span data-dojo-type="dojox/mvc/Output" data-dojo-props="value: localize('lblEmployeeCoverage')" class="titleLabel"></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="ExpanderArrowCell ExpanderArrowCellRight">
+                        <span class="expanderImg"></span>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="tafwCoverageDetailsBody collapsed" data-dojo-attach-point="tafwCoverageDetailsBody">
+        <div class="monthYear" data-dojo-type="Framework/UI/mvc/Output" data-dojo-props="value:at(this.model, 'monthYear').direction(at.from)"></div>
+        <div class="divTable">
+            <div class="divTableRow divTableHeader">
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day1Header').direction(at.from)"></span>
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day2Header').direction(at.from)"></span>
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day3Header').direction(at.from)"></span>
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day4Header').direction(at.from)"></span>
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day5Header').direction(at.from)"></span>
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day6Header').direction(at.from)"></span>
+                <span data-dojo-type="Framework/UI/mvc/Output" class="divTableCell" data-dojo-props="value:at(this.model, 'day7Header').direction(at.from)"></span>
+            </div>
+
+            <div class="divTableBody"
+                 data-dojo-attach-point="widgetList"
+                 data-dojo-type="dojox/mvc/WidgetList"
+                 data-dojo-mixins="dojox/mvc/_InlineTemplateMixin"
+                 data-dojo-props="children: at(this.model, 'weekItems')">
+                <script type="dojox/mvc/InlineTemplate">
+                    <div class="divTableRow">
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day1').direction(at.from)"></span>
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day2').direction(at.from)"></span>
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day3').direction(at.from)"></span>
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day4').direction(at.from)"></span>
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day5').direction(at.from)"></span>
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day6').direction(at.from)"></span>
+                        <span data-dojo-type="Approvals/Modules/Controls/TAFWCoverageDetailsDayCell" class="divTableCell dayOfWeekColumn" data-dojo-props="data:at('rel:', 'day7').direction(at.from)"></span>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

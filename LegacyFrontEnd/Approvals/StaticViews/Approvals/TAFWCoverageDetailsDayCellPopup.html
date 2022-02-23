@@ -1,0 +1,27 @@
+﻿<div class="tafwCoverageDetailsDayCellPopUp" data-dojo-attach-point="tafwCoverageDetailsDayCellPopUp">
+    <div data-dojo-type="Framework/UI/mvc/Output" class="date" data-dojo-props="value:at(this.model, 'date').direction(at.from)"></div>
+
+    <div data-dojo-attach-point="widgetList"
+         data-dojo-type="dojox/mvc/WidgetList"
+         data-dojo-mixins="dojox/mvc/_InlineTemplateMixin"
+         data-dojo-props="children: at(this.model, 'employees')"
+		 class="tafwCoverageList">
+        <script type="dojox/mvc/InlineTemplate">
+            <div class="row">
+                <div class="dijitInline" data-dojo-type="Framework/UI/UserProfileImage" data-dojo-props="size:'tiny',userId:at('rel:', 'EmployeeId').direction(at.from)"></div>
+                <div data-dojo-type="dijit/_Widget" data-dojo-attach-point="namePositionWrapper" class="dijitInline namePositionWrapper">
+                    <span data-dojo-type="Framework/UI/mvc/Output" class="employeeName" data-dojo-props="value:at('rel:', 'Name').direction(at.from), enableOverflowTooltip:true"></span>
+                    <div data-dojo-type="Framework/UI/mvc/Output" class="position" data-dojo-props="value:at('rel:', 'PositionName').direction(at.from), enableOverflowTooltip:true"></div>
+                </div>
+                <div class="dijitInline" data-dojo-type="dijit/_Widget" data-dojo-attach-point="positionIcon" data-dojo-props="visible: at('rel:', 'IsSamePosition')">
+                    <span class="positionIcon"></span>
+                </div>
+                <div class="dijitInline" data-dojo-type="dijit/_Widget" data-dojo-attach-point="pendingTAFWIcon" data-dojo-props="visible: at('rel:', 'HasPendingRequest')">
+                    <span class="pendingTAFWIcon"></span>
+                </div>
+            </div>
+        </script>
+    </div>
+
+</div>
+ 

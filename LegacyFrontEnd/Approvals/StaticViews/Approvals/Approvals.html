@@ -1,0 +1,17 @@
+﻿<div class="approvals" data-dojo-attach-point="scrollNode">
+
+    <!-- Approvals List contents = filterPane + MessageHeader + ContainerNode (of ApprovalListRow) -->
+    <div data-dojo-attach-point="itemList" 
+         data-dojo-type="Approvals/Modules/Controls/ApprovalsList" 
+         data-dojo-attach-event="onOpen:_itemOpen"></div>
+
+    <!-- itemContentPane opens when individual item is clicked, its the expanded view of opened item -->
+    <div data-dojo-attach-point="containerNode" 
+         class="itemContentPane dijitHidden">
+    </div>
+
+    <script type="dojo/require">
+        at:'dojox/mvc/at',
+        localize:'Framework/Modules/Localize/getLabel'
+    </script>
+</div>

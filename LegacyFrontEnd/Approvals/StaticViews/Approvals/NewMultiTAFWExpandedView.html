@@ -1,0 +1,48 @@
+﻿<div class="newMultiTafwExpandedViewBody">
+    <div class="newTafwTitle" data-dojo-type="Framework/UI/mvc/Output" data-dojo-props="value:localize('lblNewTAFW')"></div>
+    <div data-dojo-attach-point="requestHeaderExpandedView" class="TAFWNewRequestHeader">
+        <div class="multiWeekFilterMsg" data-dojo-type="Framework/UI/mvc/Output" data-dojo-attach-point="multiWeekFilterMsg" data-dojo-props="value: at(this.model, 'multiWeekFilterMsg')"></div>
+
+        <div class="approvalsHeaderRequestedOn">
+            <div class="content">
+                <div class="columnHeader">
+                    <div class="dijitInline" data-dojo-type="Framework/UI/mvc/Output" data-dojo-props="value:localize('lblRequestedOn')"></div>
+                </div>
+                <div class="columnValue">
+                    <div class="dijitInline" data-dojo-type="Framework/UI/mvc/Output" data-dojo-props="value:at(this.model, 'requestedOn').direction(at.from)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="TAFWNewRequestHeader">
+        <div class="row" data-dojo-attach-point="requestHeaderExpandedViewAfter">
+            <div class="rowElement">
+                <div data-dojo-attach-point="employeePickerNode" class="approvalsHeaderRequestedBy rowElement">
+                    <div class="dijitInline employeeLabel" data-dojo-type="Framework/UI/mvc/Output" data-dojo-props="value: localize('lblEmployee')"></div>
+                    <div data-dojo-type='Framework/UI/Form/EmployeePicker'
+                         data-dojo-attach-point="employeePicker"
+                         data-dojo-props="selectedId: at(this.model, 'employeeId'), isDetached: true, required: true, store: at(this, 'employeeStore'), allowDeselect:false, disabled: false, showActiveEmployeesOnly:true, showEmployeePosition:false"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tafwRequestEditor"
+         data-dojo-attach-point="editor"
+         data-dojo-type="WFMCommon/Modules/Controls/MultiTimeOffRequestEditor"
+         data-dojo-props="employeeId: at(this.model, 'employeeId'),
+                          initialStartDate: at(this.model, 'initialStartDate'),
+                          initialEndDate: at(this.model, 'initialEndDate'),
+                          disabled: at(this.model, 'disabled')">
+    </div>
+
+    <div class="actionGroup" data-dojo-type="dojox/mvc/Group" data-dojo-props="target: at(this, 'editor')">
+        <span class="refreshProgressBar" data-dojo-attach-point="refreshProgressBar" data-dojo-type="Framework/UI/mvc/Output" data-dojo-props="visible: at('rel:', 'isWorkInProgress')"></span>
+        <div class="dijitInline actionButtons" data-dojo-attach-point="actionButtons">
+        </div>
+    </div>
+
+    <script type="dojo/require">
+        localize:'Framework/Modules/Localize/getLabel'
+    </script>
+</div>
